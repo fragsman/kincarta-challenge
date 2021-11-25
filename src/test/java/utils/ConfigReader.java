@@ -45,7 +45,7 @@ public class ConfigReader {
 				throw new RuntimeException("Not able to parse value : " + implicitlyWait + " in to Long");
 			}
 		}
-		return 30;	
+		return 40;	
 	}
 	
 	public DriverType getBrowser() {

@@ -1,9 +1,9 @@
 package utils;
 
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 
 public class DriverManager {
 
@@ -23,7 +23,10 @@ public class DriverManager {
 	private static void createDriver() {
         switch (driverType) {
         	case EDGE : System.setProperty(configReader.getDriverKey(),configReader.getDriverPath());
-        		driver = new EdgeDriver();
+        		EdgeOptions options = new EdgeOptions();
+        		options.setPageLoadTimeout(Duration.ofSeconds(configReader.getImplicitWaitTime()));
+        		options.setImplicitWaitTimeout(Duration.ofSeconds(configReader.getImplicitWaitTime()));
+        		driver = new EdgeDriver(options);
         		break;
 	        case FIREFOX : //to-implement
 		    	break;
@@ -33,10 +36,9 @@ public class DriverManager {
         
         if(configReader.getBrowserWindowMaximized())
         	driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(configReader.getImplicitWaitTime()));
 	}
 	
-	public void closeDriver() {
+	public static void closeDriver() {
 		driver.close();
 		driver.quit();
 	}
