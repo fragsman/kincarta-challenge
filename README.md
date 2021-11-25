@@ -11,3 +11,5 @@ I just made a Manager to avoid repeating code in the step files.
 
 4) I used Edge as driver as there was no browser required. I usually use Chrome but I've just set up an very old laptop with a new copy of windows 10 and I used the default browser to not overload it.
 Funny story: I can say setting up the laptop was the most challenging of all since it originally had Windows XP in 2008 :p.
+
+5) I've just read the note regarding the commits so I add this. I think I've made everything in 3-4 commits. Is not a huge code so I expect that to be ok. Regarding times, take into accouunt my timezone. I coded at night and some at morning since I'm currently employeed so I had to work in free times or afer working hours. Also I've spent a day trying to set up an old laptop as I didn't have other programming pc other than my current job (which I won't use for this of course). In the meantime I analizing out which pages and locators I was going to need to have the problem solved (at least in my mind).
